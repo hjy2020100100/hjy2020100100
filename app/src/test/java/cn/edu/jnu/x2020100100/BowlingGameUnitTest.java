@@ -38,6 +38,14 @@ public class BowlingGameUnitTest {
             game.roll(pin);
         }
     }
-
+    @Test
+    public void testASpare()
+    {
+        game.roll(2);
+        game.roll(8);//throw a spare
+        game.roll(7);
+        RepeatedRoll(game, 0,17);
+        assertEquals(24,game.score());
+    }
 
 }
