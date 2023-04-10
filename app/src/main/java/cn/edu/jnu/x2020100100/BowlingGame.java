@@ -18,13 +18,22 @@ public class BowlingGame {
                 {
                     totalScore+=pins[scoreIndex+2];
                 }
+                if(isaStrike(scoreIndex))
+                {
+                    totalScore+=pins[scoreIndex+1];
+                    totalScore+=pins[scoreIndex+2];
+                }
             }
 
         }
         return totalScore;
     }
 
+    private boolean isaStrike(int scoreIndex) {
+        return 10 == pins[scoreIndex];
+    }
     private boolean isaSpare(int scoreIndex) {
         return 10 == pins[scoreIndex] + pins[scoreIndex + 1];
     }
 }
+

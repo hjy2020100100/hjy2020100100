@@ -56,7 +56,7 @@ public class BowlingGameUnitTest {
     {
         rollAStrike(game, 10);
         game.roll(4);
-        game.roll(7)
+        game.roll(7);
         RepeatedRoll(game, 0,16);
         assertEquals(32,game.score());
     }
