@@ -38,7 +38,6 @@ public class BowlingGameUnitTest {
             game.roll(pin);
         }
     }
-/*
     @Test
     public void testASpare()
     {
@@ -48,6 +47,6 @@ public class BowlingGameUnitTest {
         RepeatedRoll(game, 0,17);
         assertEquals(24,game.score());
     }
-*/
+
 
 }
