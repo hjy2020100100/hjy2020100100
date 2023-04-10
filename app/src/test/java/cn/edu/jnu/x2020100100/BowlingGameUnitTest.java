@@ -41,12 +41,28 @@ public class BowlingGameUnitTest {
     @Test
     public void testASpare()
     {
-        game.roll(2);
-        game.roll(8);//throw a spare
+        rollASpare();
         game.roll(7);
         RepeatedRoll(game, 0,17);
         assertEquals(24,game.score());
     }
 
+    private void rollASpare() {
+        game.roll(2);
+        game.roll(8);
+    }
+    @Test
+    public void testAStrike()
+    {
+        rollAStrike(game, 10);
+        game.roll(4);
+        game.roll(7)
+        RepeatedRoll(game, 0,16);
+        assertEquals(32,game.score());
+    }
+
+    private void rollAStrike(BowlingGame game, int pin) {
+        game.roll(pin);
+    }
 
 }

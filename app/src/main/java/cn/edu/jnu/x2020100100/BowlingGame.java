@@ -12,10 +12,9 @@ public class BowlingGame {
         for(int scoreIndex=0;scoreIndex<pins.length;scoreIndex++)
         {
            totalScore+=pins[scoreIndex];
-           //补重情况，要把下下个球得分计入
             if(scoreIndex<19)
             {
-                if(10==pins[scoreIndex]+pins[scoreIndex+1])
+                if(isaSpare(scoreIndex))
                 {
                     totalScore+=pins[scoreIndex+2];
                 }
@@ -23,5 +22,9 @@ public class BowlingGame {
 
         }
         return totalScore;
+    }
+
+    private boolean isaSpare(int scoreIndex) {
+        return 10 == pins[scoreIndex] + pins[scoreIndex + 1];
     }
 }
